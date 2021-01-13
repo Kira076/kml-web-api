@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('../kml-api');
 var debug = require('debug')('kml-web-api:server');
 var http = require('http');
 
