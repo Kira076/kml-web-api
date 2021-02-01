@@ -1,3 +1,4 @@
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,6 +8,8 @@ var stylus = require('stylus');
 
 var indexRouter = require('./routes/index');
 var ackRouter = require('./routes/ack');
+var urlTestRouter = require('./routes/urltest');
+var rgtestRouter = require('./routes/rgtest');
 
 var app = express();
 
@@ -23,6 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/ack', ackRouter);
+app.use('/urltest', urlTestRouter);
+app.use('/rgtest', rgtestRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
